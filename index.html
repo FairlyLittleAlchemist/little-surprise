@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>for you</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎁</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet" />
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="wobble"><feTurbulence baseFrequency="0.02" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="3"/></filter>
+  </svg>
+  <div class="grain"></div>
+  <div id="drift"></div>
+
+  <!-- 1. LOCK -->
+  <section id="lock" class="screen active">
+    <p class="scrawl tilt-l">psst, this one's locked</p>
+    <h1>Hold on,<br /><em>who's there?</em></h1>
+    <form id="lockForm" autocomplete="off">
+      <div id="slots"></div>
+      <input id="pw" inputmode="text" maxlength="24" aria-label="password" />
+      <button type="submit" class="btn">Let me in</button>
+    </form>
+    <button id="hintBtn" class="link" type="button">need a hint?</button>
+    <p id="hint" class="scrawl"></p>
+  </section>
+
+  <!-- 2. GIFTS -->
+  <section id="gifts" class="screen">
+    <p class="scrawl tilt-r" id="giftsHi"></p>
+    <h2 id="stage"></h2>
+    <div id="shelf"></div>
+    <p id="allDone" class="scrawl"></p>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" aria-hidden="true">
+    <div id="paper"><button id="close" class="link" aria-label="close">close ✕</button><div id="paperBody"></div></div>
+  </div>
+</body>
+</html>
